@@ -1,10 +1,9 @@
-# AWS Three-Tier Lab (Ephemeral)
+# AWS Three-Tier Lab
 
 ## Overview
 This project demonstrates a low-cost, ephemeral three-tier architecture in AWS.  
 The goal is to showcase VPC design, subnet segmentation, EC2 deployment, and secure communication between tiers.
 
-The environment is designed to be created, tested, documented, and then destroyed to minimize cost.
 
 ---
 
@@ -13,7 +12,6 @@ The environment is designed to be created, tested, documented, and then destroye
 - Separation of web, application, and database tiers
 - Public and private subnet configuration
 - Secure communication between tiers
-- Minimal cost and short runtime
 
 ---
 
@@ -29,7 +27,6 @@ The environment is designed to be created, tested, documented, and then destroye
 - Validate tier-to-tier connectivity and application functionality
 - Capture architecture screenshots and deployment evidence
 - Document security decisions, networking layout, and lessons learned
-- Tear down the environment after testing to keep costs low
 - Publish final documentation and results
 
 ---
