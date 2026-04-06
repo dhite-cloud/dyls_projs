@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.log
+
+.aws/
+*.pem
+*.key
+*.crt
+
+terraform.tfstate
+terraform.tfstate.*
+
+.DS_Store
+Thumbs.db
