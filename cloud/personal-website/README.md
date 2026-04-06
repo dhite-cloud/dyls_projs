@@ -11,7 +11,6 @@ The goal is to build a simple, professional cloud project that is low-cost, easy
 - Build a personal website that acts as an expanded resume
 - Host the site using AWS services
 - Connect the site to a custom domain
-- Keep total cost low, ideally under $15
 - Use the project to refresh and strengthen my AWS skills
 - Create a professional portfolio site that can link to GitHub, LinkedIn, resume, and future projects
 
@@ -45,13 +44,6 @@ This project will help demonstrate:
 - CloudFront distribution usage
 - Cost-conscious cloud design
 - Portfolio and personal branding
-
----
-
-## Cost Goal
-- Keep AWS usage as low as possible
-- Use free tier or near-free services where possible
-- Keep the full project under a small personal budget
 
 ---
 
