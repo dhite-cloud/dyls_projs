@@ -1,0 +1,1 @@
+“A low-cost, ephemeral AWS three-tier architecture lab built to demonstrate VPC design, subnet separation, EC2 deployment, private database placement, and layered security controls. The environment was intentionally designed for short-lived testing, documentation, and teardown to minimize cost while preserving the full architecture and deployment workflow.”
