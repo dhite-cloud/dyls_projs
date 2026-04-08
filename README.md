@@ -1,8 +1,5 @@
 # dyls_projs
 check it, work in prog
-
-# My Projects
-
 This repository some stuff I've worked on in cyber. Doing my best to add to it
 
 ## Sections
