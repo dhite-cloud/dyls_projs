@@ -1,6 +1,6 @@
 # dyls_projs
 check it, work in prog
-This repository some stuff I've worked on in cyber. Doing my best to add to it
+some stuff I've worked on in cyber. Doing my best to add to it
 
 ## Sections
 
