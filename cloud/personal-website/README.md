@@ -1,231 +1,83 @@
-# Personal Portfolio Website
+Project 1: Personal Website
 
-A cybersecurity-focused personal portfolio website built using HTML, CSS, and JavaScript. This project documents the process of adapting and enhancing a pre-built template into a structured, modern, and professional portfolio.
+The goal for this project was to create and deploy a personal website that showcases my technical abilities, houses a portfolio of projects, and serves others as a means of connecting with me. Below will contain my process, from the adaptation of a template to the deployment on Amazon Web Services.
 
----
+![Finished Homepage](screenshots/Screenpic01.png)
+Caption: Finished homepage
 
-## 🚀 Overview
+The first thing I did was find a template that I would be adapting. I wanted something professional with good animations, and https://html5up.net/dimension
+ was the perfect match. I downloaded the template and got to work. The two files that I would be utilizing the most were index.html and main.css.
 
-This website serves as a central hub for my technical background, certifications, and ongoing work in cybersecurity, networking, and cloud security. It reflects both my current skillset and my growth through hands-on learning and independent development.
+Any changes I wanted to the text and format would be done in index.html. Positioning, styling, and coloring would be done inside main.css. The process was simple: I would pick the website section I wanted to work on, find the block in the HTML, and adjust it with my own information. Easy enough for the ‘home’ and ‘about’ pages, but I had something else in mind for the ‘resume’ and ‘contact’ sections.
 
----
+At the moment, I was editing the index with Notepad, because I was too lazy to download VS Code.
 
-## 🎨 Project Origin & Development Story
+![Alt Text](screenshots/Homepagehtml.png)
 
-This project began by adapting the **"Dimension" template by HTML5 UP**:
+When I wanted to change or add an image, I would just drop the new picture into the images folder and call its name in the HTML function. My goal was to get a working static webpage first before making any major changes in CSS, so the individual pages were simple and mostly just lists or blocks of text. No formatting, positioning, or cursor changes yet.
 
-https://html5up.net/dimension
+Then I decided I wanted another page, totaling six. To complete this, I added:
 
-The original template provided a clean single-page layout, but most sections were simple text blocks with minimal structure.
+<li><a href="#achievements">Recognition</a></li>
 
-My goal was to transform it into a **modern cybersecurity portfolio** that emphasizes:
+to the navigation pane. Then I created a new block under resume, called the article id, and added the new HTML code.
 
-* Clear structure
-* Visual hierarchy
-* Reusable UI components
-* Professional presentation
+Any time I needed a large chunk of code, or if the HTML/CSS changes were complex, I co-created the code using ChatGPT.
 
----
+By this point, I had a working skeleton of a webpage, but I wanted a few changes for the look to stand out:
 
-## 🛠️ Development Process
+My about page should have a side panel highlighting important points, allowing recruiters to skim
+My resume page should have a clickable button to download or view my resume
+I want the actual badges/images for my core certifications displayed on the recognition page
+A grid for my projects; later these should be clickable to see the full project
+The contact page should have working buttons that link to my other pages
 
-### 1. Template Adaptation
+Here are the changes I made for the resume page, for example:
 
-I started by analyzing the original HTML structure and identifying reusable components such as sections, headers, and navigation.
+![Alt Text](screenshots/Screenpic12htmlresumeex.png)
 
----
+To achieve this, I copied my resume Dylan_Hite_26.pdf and placed it under a new folder titled files. It’s on the same level as index.html, so that it can be called and used as:
 
-### 2. Layout Restructuring
+files/Dylan_Hite_26.pdf
 
-I replaced large blocks of plain text with structured layouts using reusable components:
+Some more visually impressive changes I made were in the recognition page. Here’s how the page turned out, followed by a block of the CSS:
 
-```html
-<section class="info-card">
-  <h3>Section Title</h3>
-  <p>Content here</p>
-</section>
-```
+![Alt Text](screenshots/Screenpic04.png)
+![Alt Text](screenshots/Screenpic10certcards.png)
 
-This allowed for better separation of content and improved readability.
+My completed code can be seen in this repository under:
 
----
+cloud/personal-website/site/index.html  
+cloud/personal-website/site/assets/css/main.css  
+🚀 Deployment (AWS)
 
-### 3. UI Component Design
+Now it was time to deploy my static webpage in AWS.
 
-I introduced a consistent **card-based design system** across the entire site:
+The first thing I needed to do was create an S3 bucket. I configured it to allow public access, uploaded my files, and enabled static website hosting. This allowed the bucket to serve my index.html file as a live website.
 
-* About → multi-column layout with highlight cards
-* Projects → grid-based project cards
-* Contact → interactive connection cards
+![Alt Text](screenshots/Screenpic16.png)
+![Alt Text](screenshots/bucketupload.png)
+![Alt Text](screenshots/Screenpic15bucketpolicy.png)
 
----
+Next, I wanted to improve the project by adding HTTPS, connecting a custom domain from Route 53, and using CloudFront for better performance and security.
 
-### 4. CSS Enhancements
+To do this, I:
 
-I customized styling to improve interactivity and visual polish:
+Created a CloudFront distribution and linked it to my S3 bucket
+Requested an SSL certificate using AWS Certificate Manager (ACM)
+Validated the certificate using DNS validation in Route 53
+Purchased a custom domain and configured DNS records
+Pointed the domain to the CloudFront distribution
 
-```css
-.project-card {
-  border-radius: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+![Alt Text](screenshots/Cdn.png)
+![Alt Text](screenshots/Purchaseddomain.png)
+![Alt Text](screenshots/Certsdns.png)
 
-.project-card:hover {
-  transform: translateY(-0.2rem);
-}
-```
+Once everything was configured, I connected all components together:
 
-This added subtle motion and improved user experience.
+S3 → stores and serves website files
+CloudFront → distributes content globally with caching
+ACM → provides HTTPS encryption
+Route 53 → routes domain traffic to CloudFront
 
----
-
-### 5. Iterative Refinement
-
-Throughout development, I continuously:
-
-* Adjusted spacing and alignment
-* Improved typography and readability
-* Refactored sections into reusable components
-* Removed redundant elements from the original template
-
----
-
-## 📸 Screenshots
-
-### 🏠 Homepage
-
-![Homepage](screenshots/screenpic01.png)
-
-**Description:**
-The landing page introduces the site with a clean, minimal layout and clear navigation, setting the tone for a professional cybersecurity portfolio.
-
----
-
-### 👤 About Section
-
-![About](screenshots/screenpic02.png)
-
-**Description:**
-The About section was restructured into a multi-column layout, combining narrative content with highlight cards to improve readability and emphasize key information.
-
----
-
-### 📄 Resume Section
-
-![Resume](screenshots/screenpic03.png)
-
-**Description:**
-This section provides quick access to my resume with clearly styled action buttons, improving usability and user flow.
-
----
-
-### 🏆 Recognition & Certifications
-
-![Certifications](screenshots/screenpic04.png)
-
-**Description:**
-Certifications are displayed using a grid-based layout with visual badges, reinforcing credibility and technical qualifications.
-
----
-
-### 💻 Projects Section
-
-![Projects Overview](screenshots/screenpic05.png)
-
-![Projects Continued](screenshots/screenpic06.png)
-
-![Project Cards](screenshots/screenpic07.png)
-
-**Description:**
-The Projects section was redesigned using a card-based grid system to organize current and planned work. Each card highlights objectives and technical focus areas, with hover effects for interactivity.
-
----
-
-### 📬 Contact Section
-
-![Contact](screenshots/screenpic08.png)
-
-**Description:**
-The Contact section uses interactive cards for GitHub, LinkedIn, and email, providing a clean and intuitive way to connect.
-
----
-
-## 💻 Code Highlights
-
-### HTML Structure
-
-![HTML Structure](screenshots/screenpic13htmlcontact.png)
-
-**Description:**
-Example of structured HTML using reusable components, improving maintainability and scalability.
-
----
-
-### CSS Customization
-
-![CSS Header](screenshots/screenpic09cssheader.png)
-
-![Certification Cards](screenshots/screenpic10certcards.png)
-
-![Project Grid](screenshots/screenpic11projgrid.png)
-
-![Resume Section](screenshots/screenpic12htmlresumeex.png)
-
-**Description:**
-Custom CSS was used to create consistent styling across sections, including card layouts, grid systems, and interactive hover effects.
-
----
-
-## 📂 Project Structure
-
-```plaintext
-site/
-├── assets/
-├── images/
-├── screenshots/
-├── index.html
-├── main.css
-```
-
----
-
-## 📚 Credits
-
-Template:
-HTML5 UP — Dimension
-https://html5up.net/dimension
-
----
-
-## 🚀 Future Improvements
-
-* Deploy website using AWS S3 and CloudFront
-* Add live project demos and documentation
-* Expand project section with completed labs
-* Integrate backend functionality
-
----
-
-## ☁️ Deployment (In Progress)
-
-Planned deployment stack:
-
-* AWS S3 (static hosting)
-* CloudFront (CDN)
-* Route 53 (DNS)
-
----
-
-## 🎯 Career Focus
-
-* SOC Analyst (Entry-Level)
-* Cloud Security Engineering (Long-Term)
-* Cybersecurity & Networking Roles
-
----
-
-## 📬 Contact
-
-* GitHub: https://github.com/dhite-cloud
-* LinkedIn: https://www.linkedin.com/in/dylan-hite
-* Email: [dylanhite05@gmail.com](mailto:dylanhite05@gmail.com)
+![Alt Text](screenshots/finalcomplete.png)
