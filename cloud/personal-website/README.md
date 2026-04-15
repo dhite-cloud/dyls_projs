@@ -3,7 +3,7 @@ Project 1: Personal Website
 The goal for this project was to create and deploy a personal website that showcases my technical abilities, houses a portfolio of projects, and serves others as a means of connecting with me. Below will contain my process, from the adaptation of a template to the deployment on Amazon Web Services.
 
 ![Finished Homepage](screenshots/Screenpic01.png)
-Caption: Finished homepage
+Finished homepage
 
 The first thing I did was find a template that I would be adapting. I wanted something professional with good animations, and https://html5up.net/dimension
  was the perfect match. I downloaded the template and got to work. The two files that I would be utilizing the most were index.html and main.css.
