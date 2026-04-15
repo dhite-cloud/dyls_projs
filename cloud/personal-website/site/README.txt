@@ -1,6 +1,6 @@
 Project 1: Personal Website
 
-The goal for this project was to create and deploy a personal website that showcases my technical abilities, houses a portfolio of projects, and serves others as a means of connecting with me. Below will contain my process, from the adaptation of a template to the deployment on Amazon Web Services.
+The goal for this project was to create and deploy a personal website that showcases my technical abilities, houses a portfolio of projects, and serves others as a means of connecting with me. Below will contain my process, from the adaptation of a template to the deployment on Amazon Web Services. dylanhite.com
 
 ![Finished Homepage](screenshots/screenpic01.png)
 Finished homepage
@@ -71,7 +71,6 @@ Pointed the domain to the CloudFront distribution
 
 ![Alt Text](screenshots/cdn.png)
 ![Alt Text](screenshots/purchaseddomain.png)
-![Alt Text](screenshots/certsdns.png)
 
 Once everything was configured, I connected all components together:
 
