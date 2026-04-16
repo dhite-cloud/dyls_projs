@@ -10,7 +10,7 @@ This repository is a collection of my hands-on projects focused on cybersecurity
 - **[MITRE CALDERA Lab](./cyber/mitre-caldera-lab/)**  
   Adversary emulation and incident response analysis using MITRE CALDERA in a virtual lab environment.
 
-- **[Personal Website](./personal-website/site/README.md)**  
+- **[Personal Website](./cloud/personal-website/site/README.md)**  
   A custom-built website showcasing my projects, skills, and ongoing work.
 
 ## Coming Soon
