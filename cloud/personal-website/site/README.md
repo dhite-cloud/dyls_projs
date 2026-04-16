@@ -1,82 +1,181 @@
-Project 1: Personal Website
+# Project 1: Personal Website
 
-The goal for this project was to create and deploy a personal website that showcases my technical abilities, houses a portfolio of projects, and serves others as a means of connecting with me. Below will contain my process, from the adaptation of a template to the deployment on Amazon Web Services. dylanhite.com
+The goal for this project was to create and deploy a personal website that showcases my technical abilities, houses a portfolio of projects, and serves as a way for others to connect with me. Below is my full process, from adapting a template to deploying the site on AWS.
+
+**Live Site:** dylanhite.com
 
 ![Finished Homepage](screenshots/screenpic01.png)
 Finished homepage
 
-The first thing I did was find a template that I would be adapting. I wanted something professional with good animations, and https://html5up.net/dimension
- was the perfect match. I downloaded the template and got to work. The two files that I would be utilizing the most were index.html and main.css.
+---
 
-Any changes I wanted to the text and format would be done in index.html. Positioning, styling, and coloring would be done inside main.css. The process was simple: I would pick the website section I wanted to work on, find the block in the HTML, and adjust it with my own information. Easy enough for the ‘home’ and ‘about’ pages, but I had something else in mind for the ‘resume’ and ‘contact’ sections.
+## Template Selection & Initial Development
 
-At the moment, I was editing the index with Notepad, because I was too lazy to download VS Code.
+The first thing I did was find a template that I could adapt. I wanted something professional with good animations, and https://html5up.net/dimension was a perfect match. I downloaded the template and got to work.
 
-![Alt Text](screenshots/homepagehtml.png)
+The two files I used the most were:
 
-When I wanted to change or add an image, I would just drop the new picture into the images folder and call its name in the HTML function. My goal was to get a working static webpage first before making any major changes in CSS, so the individual pages were simple and mostly just lists or blocks of text. No formatting, positioning, or cursor changes yet.
+* `index.html` → structure, text, and layout
+* `main.css` → styling, positioning, and colors
 
-Then I decided I wanted another page, totaling six. To complete this, I added:
+Any changes to text or layout were done in `index.html`, while visual changes were handled in `main.css`.
 
+The process was straightforward:
+
+* Pick a section of the site
+* Find the corresponding HTML block
+* Replace it with my own content
+
+This worked well for the **home** and **about** sections, but I had more customization in mind for the **resume** and **contact** sections.
+
+At this stage, I was editing everything in Notepad (before switching to a proper editor later).
+
+![HTML Editing](screenshots/homepagehtml.png)
+
+---
+
+## Building the Site Structure
+
+When adding images, I placed them in the `/images` folder and referenced them directly in HTML. My goal was to first get a fully working **static site**, before focusing heavily on styling.
+
+At this point:
+
+* Pages were simple (mostly text and lists)
+* Minimal styling was applied
+* Focus was on functionality first
+
+---
+
+## Expanding the Website
+
+I decided to expand the site to include an additional page, bringing the total to six sections.
+
+To do this, I added a navigation link:
+
+```html
 <li><a href="#achievements">Recognition</a></li>
+```
 
-to the navigation pane. Then I created a new block under resume, called the article id, and added the new HTML code.
+Then I created a new `<article>` section in the HTML with the corresponding ID and content.
 
-Any time I needed a large chunk of code, or if the HTML/CSS changes were complex, I co-created the code using ChatGPT.
+For larger or more complex code blocks, I co-created portions of the HTML/CSS using ChatGPT.
 
-By this point, I had a working skeleton of a webpage, but I wanted a few changes for the look to stand out:
+---
 
-My about page should have a side panel highlighting important points, allowing recruiters to skim
-My resume page should have a clickable button to download or view my resume
-I want the actual badges/images for my core certifications displayed on the recognition page
-A grid for my projects; later these should be clickable to see the full project
-The contact page should have working buttons that link to my other pages
+## Feature Enhancements
 
-Here are the changes I made for the resume page, for example:
+Once the base structure was complete, I started improving the site with more meaningful features:
 
-![Alt Text](screenshots/screenpic12htmlresumeex.png)
+* The **About page** includes a side panel with key highlights for quick scanning
+* The **Resume page** includes a button to view/download my resume
+* The **Recognition page** displays certification badges visually
+* The **Projects section** uses a grid layout (planned to be fully clickable later)
+* The **Contact page** includes working links to external platforms
 
-To achieve this, I copied my resume Dylan_Hite_26.pdf and placed it under a new folder titled files. It’s on the same level as index.html, so that it can be called and used as:
+Example of resume page implementation:
 
+![Resume HTML Example](screenshots/screenpic12htmlresumeex.png)
+
+To support this, I stored my resume file in a `/files` directory:
+
+```text
 files/Dylan_Hite_26.pdf
+```
 
-Some more visually impressive changes I made were in the recognition page. Here’s how the page turned out, followed by a block of the CSS:
+---
 
-![Alt Text](screenshots/screenpic04.png)
-![Alt Text](screenshots/screenpic10certcards.png)
+## Styling & Visual Improvements
 
-My completed code can be seen in this repository under:
+One of the more visually impactful sections was the **Recognition page**, where I displayed certification badges using custom styling.
 
+![Recognition Page](screenshots/screenpic04.png)
+![Certification Cards](screenshots/screenpic10certcards.png)
+
+These changes required:
+
+* Custom CSS layouts (grid/flexbox)
+* Image formatting and spacing adjustments
+* Consistent styling across sections
+
+---
+
+## Project File Structure
+
+The main files for this project are located at:
+
+```text
 cloud/personal-website/site/index.html  
-cloud/personal-website/site/assets/css/main.css  
-🚀 Deployment (AWS)
+cloud/personal-website/site/assets/css/main.css
+```
 
-Now it was time to deploy my static webpage in AWS.
+---
 
-The first thing I needed to do was create an S3 bucket. I configured it to allow public access, uploaded my files, and enabled static website hosting. This allowed the bucket to serve my index.html file as a live website.
+## 🚀 Deployment (AWS)
 
-![Alt Text](screenshots/screenpic16.png)
-![Alt Text](screenshots/bucketupload.png)
-![Alt Text](screenshots/screenpic15bucketpolicy.png)
+Once the site was complete locally, I deployed it using AWS.
 
-Next, I wanted to improve the project by adding HTTPS, connecting a custom domain from Route 53, and using CloudFront for better performance and security.
+### Step 1: S3 Static Hosting
 
-To do this, I:
+* Created an S3 bucket
+* Enabled **public access** (for static hosting)
+* Uploaded all website files
+* Enabled **static website hosting**
+* Configured `index.html` as the entry point
 
-Created a CloudFront distribution and linked it to my S3 bucket
-Requested an SSL certificate using AWS Certificate Manager (ACM)
-Validated the certificate using DNS validation in Route 53
-Purchased a custom domain and configured DNS records
-Pointed the domain to the CloudFront distribution
+![S3 Setup](screenshots/screenpic16.png)
+![Bucket Upload](screenshots/bucketupload.png)
+![Bucket Policy](screenshots/screenpic15bucketpolicy.png)
 
-![Alt Text](screenshots/cdn.png)
-![Alt Text](screenshots/purchaseddomain.png)
+---
 
-Once everything was configured, I connected all components together:
+### Step 2: CloudFront + HTTPS + Domain
 
-S3 → stores and serves website files
-CloudFront → distributes content globally with caching
-ACM → provides HTTPS encryption
-Route 53 → routes domain traffic to CloudFront
+To improve the project and make it production-ready, I added:
 
-![Alt Text](screenshots/finalcomplete.png)
+* HTTPS encryption
+* Custom domain
+* Global content delivery
+
+Steps taken:
+
+* Created a **CloudFront distribution** linked to the S3 bucket
+* Requested an SSL certificate using **AWS Certificate Manager (ACM)**
+* Validated the certificate using **DNS validation in Route 53**
+* Purchased a domain and configured DNS records
+* Pointed the domain to the CloudFront distribution
+
+![CloudFront Setup](screenshots/cdn.png)
+![Domain Setup](screenshots/purchaseddomain.png)
+
+---
+
+### Final Architecture
+
+All components work together as follows:
+
+* **S3** → stores and serves static website files
+* **CloudFront** → caches and distributes content globally
+* **ACM** → provides HTTPS encryption
+* **Route 53** → routes domain traffic
+
+![Final Architecture](screenshots/finalcomplete.png)
+
+---
+
+## Key Takeaways
+
+* Building a static website requires strong understanding of HTML/CSS structure before styling
+* Separating functionality (HTML) and design (CSS) makes development easier to manage
+* AWS S3 + CloudFront is an effective way to deploy scalable static websites
+* Adding HTTPS and a custom domain significantly improves professionalism and usability
+
+---
+
+## Future Improvements
+
+* Make project cards fully interactive and clickable
+* Improve mobile responsiveness
+* Add backend functionality (forms, analytics, etc.)
+* Transition development fully into a modern editor (VS Code)
+
+---
