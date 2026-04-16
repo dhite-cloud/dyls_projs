@@ -1,16 +1,24 @@
 # dyls_projs
-check it, work in prog
-some stuff I've worked on in cyber. Doing my best to add to it
+# Project Repository
 
-## Sections
+Welcome to my project repository!
 
-### Cyber
-- Python scripts
-- MITRE CALDERA lab
-- Other cybersecurity projects
+This repository is a collection of my hands-on projects focused on cybersecurity, networking, and system design. It is currently a work in progress as I continue to build and expand my portfolio.
 
-### Networking
-- Networking labs, configs, and future projects
+## Completed Projects
 
-### Cloud
-- Cloud labs, AWS projects, and future deployments
+- **[MITRE CALDERA Lab](cyber/mitre-caldera-lab/)**  
+  Adversary emulation and incident response analysis using MITRE CALDERA in a virtual lab environment.
+
+- **[Personal Website](personal-website/site/)**  
+  A custom-built website showcasing my projects, skills, and ongoing work.
+
+## Coming Soon
+
+- Python Scripts  
+- Automated Defense System  
+- Three-Tier Architecture Lab  
+
+---
+
+As I continue developing new projects, this repository will be updated to reflect my growth and experience in cybersecurity and IT.
